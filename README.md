@@ -32,6 +32,7 @@ Needs bearer token for all requests, bearer tokens expire after 24 hours. Use Ch
 | /community-service/v1/communities/featured | returns featured communities | 
 | /community-service/v1/communities/{community ID}/members/details | returns membership info of a group | 
 | /community-service/v1/leaderboards/communities/{community ID}/{YYYY-MM-DD}/strain/day_strain | 
+| /activities-service/v1/sports/history?countryCode=US | i think this returns all of the sport_ids?? |
 
 # Notes
 - For `rollups_service`, the rollup returns a `sport_id` - ex, `60` is Rock Climbing. I haven't found an entire list of these yet, so it will be guess work until then.
