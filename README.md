@@ -1,10 +1,19 @@
 # whoop-re
 Reverse engineering WHOOP's production API.
 
-Production URL: `https://api.prod.whoop.com`
-Development URL: `https://api.dev.whoop.com`
+- Production URL: `https://api.prod.whoop.com`
+- Development URL: `https://api.dev.whoop.com`
+- Authorization URL: `https://api-7.whoop.com`
 
-Needs bearer token for all requests, not sure when it expires. Use Charles or another SSL sniffing tool to find this.
+Needs bearer token for all requests, bearer tokens expire after 24 hours. Use Charles or another SSL sniffing tool to find this.
+
+# Authorization routes
+(note: these all use the authorization URL)
+| Route      | Body | (Guessed) Description |
+| ----------- | ----------- | ----------- |
+| /api/oauth | {"grant_type": "password", "username": "<your name>", "password": "<your password>"} | Returns access token, refresh token, expirty and user body |
+| /users/{id} | n/a | Looks like another way to return member information - same data as `/membership` |
+
 
 # Unmapped routes
 | Route      | (Guessed) Description |
